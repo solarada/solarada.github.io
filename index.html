@@ -1,61 +1,137 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>SolarPool</title>
-</head>
-
-<body>
-
-<h1>SolarPool [SOLAR]</h1>
-
-<p>SolarPool is a Cardano stake pool project aiming to run on distributed power. The Cardano Proof of stake consensus mechanism makes this possible because electricity is not wasted as in Proof of work hashing. Green electricity can be obtained via power grid as well, but running your own supply means greater level of decentralization.
-</p>
-
-<p>According to the Cambridge Bitcoin Electricity Consumption Index (CBECI) Bitcoin network's power consumption is over seven gigawatts (7GW).
-It is more than single countries like Switzerland or Czech Republic use.
-Cardano network is super energy efficient compared to Bitcoin no matter the hardware used. But what if all the Cardano stake nodes were executed on energy efficient hardware ?
-</p>
-
-<p>
-Let's say we have 2000 stake nodes with 30 Watt consumption each (15W for the computer and 15W for UPS and network gear).
-Of course there are a lot more full nodes in the Cardano network but in order to compare staking vs mining only stake nodes are taken into account.
-<br>
-0.03kW * 24h * 365 * 2000 = 525600kWh annual consumption
-<br>
-<br>
-So it would roughly equal the electricity consumption of 28 Finnish houses (Electrically heated ones use ~19000kWh per year).
-28 houses vs whole Switzerland. It is a big difference.
-</p>
-
-<p>It is slightly funny that SolarPool is located in northern Finland and may not be able to run on solar power all year round. Does it make sense then ? Yes. The power supply system will eliminate the need for a separate UPS and ideally with big enough panel and battery capacity the node could be run at least 90% on solar energy all year round. One of the reasons for this project is also providing information for the community about the system hardware choices, power consumption and the achieved overall performance.
-</p>
-
-<h2>Pool fees</h2>
-<p>There will be no goofing around with the pool fees. Level of fees will be checked half-yearly and if changes are made the changes are published two weeks before the actual change takes place.
-For H1 2021 both the fixed pool cost and the variable fee (margin) are set to minimum.
-<br>Fixed cost: 340₳
-<br>Variable fee: 0%
-</p> 
-
-<h2>Phase 0</h2>
-<p>In the first phase of the project the node is executed with typical hardware.</p>
-<p>Jan. 29, 2021: Updated to Cardano Node 1.25.1</p>
+  <head>
+    <title>SolarPool</title>
+    <link rel="stylesheet" href="https://vanillacss.com/vanilla.css">
+    <style>
+      body{
+      margin:0 auto;
+      max-width:50rem;
+      }
+      @media(max-width:50rem) {
+      body {
+      padding: 10px;
+      }
+      }
+    </style>
+  </head>
   
-<h2>Phase 1 (current)</h2>
-<p>Migrate the node to energy efficient hardware.</p>
-<p>Jan. 30, 2021: NUC7PJYH fired up with 16GB RAM and 1TB SSD (Samsung 860 EVO). Linux was installed and the node migrated.</p>
-<p>It seems the NUC7 can use 2x8GB RAM (Kingston KVR24S17S8/8) even though there is a 8GB max in the specifications.</p>
-<p>Power consumption is being measured.</p>
+  <body>
+    
+    <img src="cardano-ada-logo.png" style="width:15%" />                  
+    <header><h1>SolarPool [SOLAR]</h1></header>
+    
+    <p>
+      SolarPool is a Cardano stake pool project aiming to run on renewable energy from its own distributed power source.
+      The Cardano proof-of-stake consensus mechanism makes this possible because electricity is not wasted as in proof-of-work hashing.
+      Green electricity can be obtained via power grid as well, but running your own supply means even greater level of decentralization.
+    </p>
+    
+    
+    <p>
+      According to the Cambridge Bitcoin Electricity Consumption Index (CBECI) Bitcoin network's power consumption is already over seven gigawatts (7GW).
+      It is more than single countries like Switzerland or Czech Republic use.
+      Cardano network is super energy efficient compared to Bitcoin no matter the hardware used.
+      But what if all the Cardano stake nodes were executed on energy efficient hardware ?
+    </p>
+    
+    <p>
+      
+      <dl>
+        <dt>Let's say we have 2000 stake nodes with 30 Watt consumption each. Of course there are a lot more full nodes in the Cardano network but in order to compare staking vs mining only stake nodes are taken into account.</dt>
+        <dd>15W for the computer and 15W for UPS and network gear ==> 0.03kW</dd>
+        <dd>0.03kW * 24h * 365 * 2000 = 525600kWh annual consumption</dd>
+      </dl>
+      
+      So it would roughly equal the electricity consumption of 28 Finnish houses (Electrically heated ones use ~19000kWh per year).
+      28 houses vs whole Switzerland. It is a big difference.
+    </p>
+    
+    <p>It is slightly funny that SolarPool is located in northern Finland and may not be able to run on solar power all year round. Does it make sense then ? Yes. The power supply system will eliminate the need for a separate UPS and ideally with big enough panel and battery capacity the node could be run at least 90% on solar energy all year round. One of the reasons for this project is also providing information for the community about the system hardware choices, power consumption and the achieved overall performance.
+    </p>
+    
+    <header><h1>Pool fees</h1></header>
+    <p>
+      There will be no goofing around with the pool fees. Level of fees will be checked half-yearly and if changes are made the changes are published two weeks before the actual change takes place.
+      For H1 2021 both the fixed pool cost and the variable fee (margin) are set to minimum.
+      <ul>
+        <li>Fixed cost: 340₳</li>  
+        <li>Variable fee: 0%</li>
+      </ul>
+    </p> 
+    
+    <header><h1>Current setup</h1></header>
+    <p>
+      SolarPool is now running on energy efficient hardware.
+    </p>
+    <ul>
+      <li>Intel NUC7PJYH</li>  
+      <li>16GB RAM (2 x Kingston KVR24S17S8/8)</li>
+      <li>1TB SSD (Samsung 860 EVO)</li>
+    </ul>
 
-<h2>Phase 2</h2>
-<p>Power supply from lead-acid battery bank. No inverter is necessary if Intel NUC or similar is used.</p>
+    <figure>
+      <img src="meas.jpg" />
+      <figcaption>NUC with power meter. Lab power supply is waiting for further testing.</figcaption>
+    </figure>
+   
+    <header><h1>Log</h1></header>
+    <dl>
+      <dd>Jan. 23, 2021: SolarPool was registered (running on desktop HW)</dd>
+      <dd>Jan. 29, 2021: Updated to Cardano Node 1.25.1</dd>
+      <dd>Jan. 30, 2021: NUC7PJYH fired up and Linux was installed. Node was migrated.</dd>
+      <dd>Feb. 06, 2021: One week on NUC. Power consumption chart added.</dd>
+    </dl>
 
-<h2>Phase 3</h2>
-<p>Installation of solar panels and charge controller.</p>
+    <header><h1>Results</h1></header>
+ 
+    <figure>
+      <img src="meas_power.png" />
+      <figcaption>Wattage stays between 6-7W</figcaption>
+    </figure>
 
-<h2>Phase 4</h2>
-<p>Powering network gear from battery bank.</p>
-
-</body>
+    <figure>
+      <img src="meas_energy.png" />
+      <figcaption>Energy consumption for one week was ~1.2kWh</figcaption>
+    </figure>
+    <p>
+      Energy consumption is surprisingly low. 1.2kWh for one week maps to around 3-4 hours of GPU mining with a single GPU.
+    </p>
+    
+    <header><h1>Next steps</h1></header>
+    
+    <h2>Phase 2</h2>
+    <p>
+      <ul>
+        <li>Power supply from lead-acid battery bank.</li>
+        <li>It would be possible to run NUC7PJYH directly from 12VDC battery without the losses caused by an inverter and the NUC 19VDC power supply.
+            On the other hand using an inverter would make it easier to add network gear to the system.
+        </li>
+      </ul>
+    </p>
+    
+    <h2>Phase 3</h2>
+    <p>
+      <ul>
+        <li>Installation of solar panels and charge controller.</li>
+      </ul>
+    </p>
+    
+    <h2>Phase 4</h2>
+    <p>
+      <ul>
+        <li>Powering network gear from battery bank.</li>
+      </ul>
+    </p>
+    
+    <h2>Phase 5</h2>
+    <p>
+      <figure>
+        <img src="doge.png" />
+        <figcaption>Doge approves.</figcaption>
+      </figure>
+    </p>
+    
+  </body>
 </html>
 
